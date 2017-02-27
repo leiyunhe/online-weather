@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css" />
+
+<style type="text/css">
+.button_position
+{width:50%; float:left; disline:inline;}
+</style>
+</head>
+
+<body align = "center">
+<h1>实时天气查询</h1>
+<hr/>
+
+<form action="http://localhost:5000/" method = "post">
+请输入您要查询的城市
+
+<input type="text" name="InputCity">
+<input type="submit" value="查询">
+<br><br>
+
+</form>
+
+<form action="http://localhost:5000/update" method = "post">
+请输入您要更新的信息
+<!-- <input type="text" name="Input" value= "上海 晴"> -->
+<input type="text" name="Input">
+<input type="submit" name="update" value="更新">
+</form>
+
+<br><br>
+
+<div class="button_position" align="right">
+<form action="http://localhost:5000/history" method = "get">
+<input type="submit" name="history" value="历史">
+</form>
+</div>
+
+<div class="button_position" align="left">
+<form action="http://localhost:5000/help" method = "get">
+<input type="submit" name="help" value="帮助" >
+</form>
+</div>
+
+<br><br>
+
+      <table  align = "center">
+         {% for k in result %}       
+
+            <tr>
+               <td> {{ k }} </td>
+            </tr>
+            
+         {% endfor %}
+      </table>
+
+</body>
+</html>

@@ -2,6 +2,8 @@ from flask import Flask, redirect, url_for, request, render_template,g
 from RealtimeQuery import query_realtime, documentation, log, log_append
 import sqlite3
 import datetime
+import os
+
 app = Flask(__name__)
 
 DATABASE = './database.db'
@@ -51,7 +53,7 @@ def query(city):
 	s = query_from_db(city)
 	return render_template('index.html', result = s)
 
-@app.route('/weather', methods = ['POST', 'GET'])
+@app.route('/', methods = ['POST', 'GET'])
 def weather():
 	'''从文本框输入城市名，作为参数提交到query(),取回天气值'''
 	if request.method == 'POST':
@@ -93,5 +95,6 @@ def help():
 
 if __name__ == '__main__':
 	log()
+	port = int(os.environ.get("PORT", 5000))
 	with app.app_context():
-		app.run(debug = True)
+		app.run(host='0.0.0.0', port=port)
