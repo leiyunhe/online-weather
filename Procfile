@@ -1,3 +1,1 @@
-
-
-web: python WebQueryDb.py --log-file -
+web: gunicorn run:app --log-file -
