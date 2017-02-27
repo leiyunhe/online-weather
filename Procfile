@@ -1,3 +1,3 @@
 
 
-web: python WebQueryBd.py --log-file -
+web: python WebQueryDb.py --log-file -
