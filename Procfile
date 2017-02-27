@@ -1,2 +1,3 @@
-web: python WebQueryBd.py runserver 0.0.0.0:5000 --log-file -
 
+
+web: python WebQueryBd.py --log-file -
