@@ -1,0 +1,26 @@
+
+h1 
+{
+color: blue; 
+font-family: Times, TimesNR, 'New Century Schoolbook',
+     Georgia, 'New York', serif;
+font-weight:bold;
+font-size:60px;
+}
+
+p
+{
+color:blue;
+font-weight: bold;
+font-size: 20px;
+}
+
+.rectangular
+{
+border-style: 2px;
+width: 200;
+height: 600;
+
+}
+
+.button_position {width:50%; float:left; disline:inline;}
